@@ -26,6 +26,7 @@
     
     // Create url connection and fire request
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [conn start];
     // Do any additional setup after loading the view, typically from a nib.
 
     
@@ -60,7 +61,7 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
-    // NSLog(@"%s \n ====", __PRETTY_FUNCTION__);
+     NSLog(@"%s \n ====", __PRETTY_FUNCTION__);
     
     
     double interval = 1;  // 間隔多久執行一次 (秒)
@@ -69,7 +70,7 @@
                                                   selector:@selector(UploadTaskMethod:)
                                                   userInfo:nil
                                                    repeats:true];
-
+    
     
     
 }
